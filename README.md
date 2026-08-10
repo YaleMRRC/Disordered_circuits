@@ -1,2 +1,6 @@
 # Disordered_circuits
-This is the repository containing the code for disordered circuit modeling
+This is the repository containing the code for disordered circuit modeling.
+
+First, the user should run connectome-based predictive modeling (CPM; Finn et al., 2015 and Shen et al., 2017) to identify network correlates of each of the modeled symptoms. The CPM code used in this study was run using the script CPM_python.py, which was called via the wrapper 'run_cpm_array.sbatch' to parallelize the modeling on Yale's high performance cluster. The CPM code requires NxNxS (node x node x subjects) connectivity matrices (provided in 'Input_data/averaged_mats.mat'), SxM (subjects x measures) symptom measures matrices (provided in 'Input_data/BSI_items.mat'), and confounds (such as age and sex, provided in 'Input_data/confounds.mat'). The CPM outputs for the items utilized in this study are stored in this repository in the folder 'Prediction_data'. 
+
+Every analysis reported in the manuscript can be run using Disordered_circuits_analysis.ipynb. This Jupyter Notebook was constructed so that every cell should be run in order. The user of this notebook should change the relevant input data's filepaths before running. All necessary input data is located in this repository in the folders 'Input_data/' and 'Prediction_data/'. 
